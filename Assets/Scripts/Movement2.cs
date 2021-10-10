@@ -10,31 +10,31 @@ public class Movement2 : MonoBehaviour
     public int movementSpeed = 20;
     public float gravity = 20.0f;
     public int blinkDistance = 5;
-    private Vector3 moveDirection = Vector3.zero;
-    CharacterController charControl;
+    private Vector3 _moveDirection = Vector3.zero;
+    CharacterController _charControl;
 
     private void Start()
     {
-        charControl = GetComponent<CharacterController>();
+        _charControl = GetComponent<CharacterController>();
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (charControl.isGrounded)
+        if (_charControl.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            moveDirection *= movementSpeed;
+            _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            _moveDirection *= movementSpeed;
         }
 
         //general movement
-        moveDirection.y -= gravity * Time.deltaTime;
-        charControl.Move(moveDirection * Time.deltaTime);
+        _moveDirection.y -= gravity * Time.deltaTime;
+        _charControl.Move(_moveDirection * Time.deltaTime);
         
         //blink ability
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            charControl.transform.Translate(moveDirection*Time.deltaTime * blinkDistance);
+            _charControl.transform.Translate(_moveDirection*Time.deltaTime * blinkDistance);
         }
         
     }

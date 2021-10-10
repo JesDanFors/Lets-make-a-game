@@ -2,26 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Collectiable : MonoBehaviour
 {
-    public int _collected;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public int collected;
+    
     private void OnTriggerEnter(Collider other)
     {
-        _collected++;
-        Debug.Log(_collected);
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            collected++;
+            Debug.Log(collected);
+            Destroy(gameObject);
+        }
     }
 }
