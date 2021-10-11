@@ -31,7 +31,7 @@ public class Movement2 : MonoBehaviour
         _moveDirection.y -= gravity * Time.deltaTime;
         _charControl.Move(_moveDirection * Time.deltaTime);
         
-        //blink ability
+        //Dash ability
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _charControl.transform.Translate(_moveDirection*Time.deltaTime * blinkDistance);

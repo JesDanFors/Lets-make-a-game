@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement  : MonoBehaviour
 {
@@ -21,5 +23,9 @@ public class EnemyMovement  : MonoBehaviour
         Vector3 pos = Vector3.MoveTowards(transform.position, target.position, speed * Time.fixedDeltaTime);
         _rig.MovePosition(pos);
         transform.LookAt(target);
+        if (target==null)
+        {
+            Destroy(this.GameObject());
+        }
     }
 }
