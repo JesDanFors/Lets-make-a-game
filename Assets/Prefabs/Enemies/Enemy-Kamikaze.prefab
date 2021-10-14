@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5296872565698360858}
   - component: {fileID: 788743425606805070}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy-Kamikaze
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ef664a91d830840ae4b3d41578afb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 3335190554205218960, guid: 7d5c6086a058f364aa7e1d50babe1874, type: 3}
   speed: 10
 --- !u!136 &5296872565698360861
 CapsuleCollider:
@@ -144,3 +144,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   maxHealth: 10
+  _tag: Player

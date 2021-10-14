@@ -15,7 +15,6 @@ public class TakeDamage : MonoBehaviour
    {
       _health = maxHealth;
    }
-
    private void OnCollisionEnter(Collision other)
    {
      bool hit = other.collider.CompareTag(_tag);
@@ -26,12 +25,6 @@ public class TakeDamage : MonoBehaviour
         ONDeath();
      }
    }
-
-   private void OnTriggerEnter(Collider other)
-   {
-      bool hit = other.GetComponent<Collider>().CompareTag((_tag));
-   }
-
    private void ONDeath()
    {
       if (_health <= 0)
